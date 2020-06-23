@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<title>Conditions and Loops</title>
+
+<script>
+// 1
+function colors(temperature) {
+    var temp = temperature
+    switch (true) {
+        case temp >= 90:
+            return "#ff6337"
+            break;
+        case temp >= 80:
+            return "#FF7F50"
+            break;
+        case temp >= 70:
+            return "#FFD700"
+            break;
+        case temp >= 60:
+            return "#008000"
+            break;
+        case temp >= 50:
+            return "#1E90FF"
+            break;
+        case temp >= 40:
+            return "#ADD8E6"
+            break;
+    }
+};
+
+function centrify(yourStringArray) {
+    result = []
+    for (i=0; i<5; i++) {
+        // make an array for each string in original. should be 5
+        newArray = []
+        //push element into new array
+        newArray.push(yourStringArray[i])
+        // copy element 99 times. 
+        for (j=0;j<99; j++) {
+            newArray.push(yourStringArray[i])
+        }
+    result.push(newArray)
+    }
+    return result
+}
+
+
+</script>
+
+<body>
+
+
+</body>
+</html>
+
+<!-- Write a function that accepts an argument named tempature. Have at least 6 ranges of tempature that represents a html valid color. Return the color based on the argument supplied when calling the function.
+        Use Switch. (hint do a google search for 'switch(true)' )
+Write a function that will return an array of arrays with 100 copies of each element in the array supplied in the as an argument of the function. 
+        The array in the parameter needs to be strings and needs to have at least 5 elements.
