@@ -1,0 +1,247 @@
+</head>
+<title>JS medium exercises</title>
+
+<script>
+// Madlib
+madlib = ((name, subject) => {
+    return console.log(`${name}'s favorite subject in school is ${subject}`);
+});
+
+// Tip calculator
+tipAmount = ((bill, service) => {
+    switch (true) {
+        case service == "good":
+            return bill * 0.2;
+            break;
+        case service == "fair":            
+        return bill * 0.15;
+            break;
+        case service == "bad":
+            return bill * 0.1;
+            break;
+    }
+});
+// Tip calculator 2
+tip2 = ((bill, service) => {
+    return (tipAmount(bill, service) + bill);
+});
+
+// print numbers
+printNums = ((num) => {
+    for (i=1; i<nums+1; i++) {
+        console.log(i);
+        console.log("\n");
+    };
+});
+
+printSquare = ((length) => {
+    for (i=0; i<length; i++) {
+        console.log("-".repeat(length));
+        console.log("\n");
+    }; 
+});
+
+printBox = ((width, height) => {
+    console.log("-".repeat(width));
+    var spaces = " ".repeat(width);
+    var sides = "|".repeat(height);
+});
+
+printBanner = ((banner) => {
+    console.log("-".repeat(banner.length));
+    console.log(`- ${banner} -`);
+    console.log("-".repeat(banner.length));
+});
+
+leetspeak = ((string) => {
+    for (i=0; i<string.length; i++) {
+        char = string[i];
+        switch (true) {
+        case char == "A":
+            string[i] = 4
+            break;
+        case char == "E":
+            string[i] = 3
+            break;
+        case char == "G":
+            string[i] = 6
+            break;
+        case char == "I":
+            string[i] = 1
+            break;
+        case char == "O":
+            string[i] = 0
+            break;
+        case char == "S":
+            string[i] = 5
+            break;
+        case char == "T":
+            string[i] = 7
+            break;
+    }
+    };
+});
+
+// long vowels
+longVowels = ((string) => {
+    newArray = []
+    for (i=0; i<string.length; i++) {
+        char = string[i];
+        switch (true) {
+        case char == "A":
+            newArray.push(charRepeat('A', 5))
+            break;
+        case char == "E":
+            newArray.push(charRepeat('E', 5))
+            break;
+        case char == "I":
+            newArray.push(charRepeat('I', 5))
+            break;
+        case char == "O":
+            newArray.push(charRepeat('O', 5))
+            break;
+        case char == "U":
+            newArray.push(charRepeat('U', 5))
+            break;
+        default:
+            newArray.push(char);
+    }
+    };
+});
+
+charRepeat = ((char, times) => {
+    return char.repeat(times);
+});
+
+positives = ((numArray) => {
+    newArray = []
+    for (i=0; i<numArray.length; i++) {
+        if (!(numArray[i] > 0)) {
+            newArray.push(numArray[i]);
+        }   
+    }
+    return newArray;
+});
+
+caesarCipher = ((stringx, key) => {
+    code_map = {};
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split();
+    let count = 0;
+    for (const letter of alphabet) {
+        code_map[letter] = count;
+        count++;
+    };
+    newString = '';
+    for (const char of stringx) {
+        let x = (code_map[char]+key) % alphabet.length;
+    };
+});
+
+starWarsNames.forEach((name, idx) => {
+    console.log(`${idx}: ${name}`)
+    if (name == "Leia") {
+        console.log("She's the chosen one")
+    }
+    if (name == "Luke") {
+        console.log("He will be the savior of the force")
+    };
+    if (name == "JarJar") {
+        console.log("He will become more powerful than you will ever know")
+    };
+});
+
+starWarsNames.map(name => `${name} is being mapped here`)
+
+
+// Write a function that will recieve a sentance as a string and return another string of only the letters that MATCH the requirement of being upper case JOINed together.
+//     Hint you will be using a string method and an array method.
+// Write a function that will return the KEYS of an object as an array and have the array SORTed in alphebetical order.
+// Write a function that will accept an Array of numbers as a parameter and return the first number that it FINDs that is greater than a second parameter.
+//     Hint I told you that you would see this on MDN.
+// Write a function that accepts 2 objects and returns a new object that is made up of the two objects.
+//     The resulting object must not modify either of the two objects in the parameters.
+
+capitals = ((sentence) => {
+    newString = [];
+    sentence = sentence.replace(/\s/g, '');
+    for (i=0; i<sentence.length; i++) {
+        char = sentence[i];
+        if (char == char.toUpperCase()) {
+            newString.push(char)
+    }
+    };
+    console.log(newString.join())
+});
+
+const upperString = string => {
+    const test = /[A-Z]/g;
+    const upper = string.match(test)
+    return upper.join('')
+        }
+console.log(upperString('Hello my Name is Jordan rivers'));
+
+// test this one
+sortObject = ((objectx) => {
+    let keys = Object.keys(objectx);
+    return keys.sort()
+});
+
+firstGreaterThan = ((arr, num) => {
+    return arr.find(element=>element>num);
+});
+
+assign = ((obj1, obj2) => {
+    
+    return Object.assign([], obj1, obj2);
+});
+
+const ObjList = ((arr) => {
+    return arr.map((val, idx) => {
+        return {item: val, index: idx}
+    });
+});
+
+// 1. Create a function that accepts an array as an argument and for every item in the array return a new array of objects where each object has two keys. Item and index. The value should be the element from the array and the index respectivly. 
+// 2. Use the array of object provided in the file "swapi.js" for the next several items.
+//     Create an array of only the names.
+var names = students.map((student) => {
+  return student.name;
+});
+//     Create an array that includes the name and mass of all charectors who mass is greater than 50.
+//         Make sure you check the type of the mass.
+//     Create an array of objects of only the characters that have at  least one starship. The objects only need 'name' and 'hasStarship' as its keys.
+//     Create an array of names of only the charecters who have both a starship and a vehicle. 
+
+
+
+</script>
+
+<body>
+
+
+</body>
+</html>
+
+switch (true) {
+        case temp >= 90:
+            return "#ff6337"
+            break;
+        case temp >= 80:
+            return "#FF7F50"
+            break;
+        case temp >= 70:
+            return "#FFD700"
+            break;
+        case temp >= 60:
+            return "#008000"
+            break;
+        case temp >= 50:
+            return "#1E90FF"
+            break;
+        case temp >= 40:
+            return "#ADD8E6"
+            break;
+    }
+
+
+  
