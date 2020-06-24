@@ -271,13 +271,27 @@ const ObjList = ((arr) => {
 });
 // 2. Use the array of object provided in the file "swapi.js" for the next several items.
 //     Create an array of only the names.
+    /* 
+    *****Clints comments ***** 
+    
+    Good!*/
 let names = charecters.map((character) => {
   return character.name;
 });
 //     Create an array that includes the name and mass of all charectors who mass is greater than 50.
 //         Make sure you check the type of the mass.
+    /* 
+    *****Clints comments ***** 
+    
+    We didn't go over filter but you used it. Not bad.*/
 let massive = charecters.filter((character) => {
     if (character.mass > parseInt(50)) {return character}});
+    /* 
+    *****Clints comments ***** 
+    
+    You can chain filter and map if you want to 
+        ***result array = filter(filtercallback).map(mappcallback) *** .
+*/
 let massive_names = massive.map((character) => character.name);
 //         return character.map((character) => {character.name})
 //         };
