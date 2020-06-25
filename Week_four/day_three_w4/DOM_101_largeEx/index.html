@@ -1,0 +1,154 @@
+<!-- 
+About me should include
+Images
+Description,
+List of likes and dislikes -->
+<!DOCTYPE html>
+<head>
+    <title>Scripted About Me</title>
+</head>
+
+<body>
+    <div id='root'></div>
+</body>
+<script>
+    // establish root
+    let root = document.getElementById('root')
+    // add navbar
+    let navOptions = ["Home", "Contact", "About", "Projects"]
+    let navText = document.createElement("span")
+    let navbar = document.createElement("div")
+    navOptions.forEach((val) => {
+        let navOption = document.createElement("a")
+        // navOption.innerHTML += `${val}`
+        navOption.append(val)
+        navOption.setAttribute('class', 'navbar-item')
+        navText.append(navOption)
+    });
+    navbar.append(navText)
+    navbar.setAttribute('class', 'navbar')
+    root.append(navbar)
+
+    // add image wrapper and image
+    var img = document.createElement("IMG")
+    let imgDiv = document.createElement("div")
+    imgDiv.setAttribute('class', 'image-wrapper')
+    img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8QhM0Mz9l06DMRD2i-SJ6RqdjCwnnJoqvQKOKk11VDRF8GIj1&usqp=CAU';
+    imgDiv.innerHTML += '<img src="'+img.src+'" />'
+    root.append(imgDiv)
+
+    // add description
+    let description = "Hey my name is David Mitchell and this webpage will give you a peek into who I am.";
+    let des = document.createElement("p")
+    let desDiv = document.createElement("div")
+    desDiv.append(description)
+    desDiv.setAttribute('class', 'description-wrapper')
+    root.append(desDiv)
+
+    // add list of likes
+    let likes = ["Neuroscience", "Computer Science", "Technology"]
+    let likeDiv = document.createElement("div")
+    let likeList = document.createElement("ol")
+    likes.forEach((val) => {
+        let likeItem = document.createElement("li")
+        likeItem.append(val)
+        likeItem.setAttribute('class', 'likeList-item')
+        likeList.append(likeItem)
+    });
+    likeListHeader = document.createElement('h3')
+    likeListHeader.append("David's Likes")
+    likeListHeader.setAttribute('class', 'listHeader')
+    likeDiv.append(likeListHeader)
+    likeDiv.append(likeList)
+    root.append(likeDiv)
+    // add list of dislikes
+    let dislikes = ["Small paychecks", "Pandemics", "Inequality"]
+    let dislikeDiv = document.createElement("div")
+    let dislikeList = document.createElement("ol")
+    dislikes.forEach((val) => {
+        let dislikeItem = document.createElement("li")
+        dislikeItem.append(val)
+        dislikeItem.setAttribute('class', 'dislikeList-item')
+        dislikeList.append(dislikeItem)
+    });
+    dislikeListHeader = document.createElement('h3')
+    dislikeListHeader.append("David's Dislikes")
+    dislikeListHeader.setAttribute('class', 'listHeader')
+    dislikeDiv.append(dislikeListHeader)
+    dislikeDiv.append(dislikeList)
+    root.append(dislikeDiv)
+    
+    
+    </script>
+    <style>
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            }
+
+            /* Style the links inside the navigation bar */
+        .navbar-item {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+            /* Change the color of links on hover */
+        .navbar-item:hover {
+            background-color: #ddd;
+            color: black;
+            }
+        ol {
+            padding:10px;
+            margin:10px;
+            width:100%;
+            max-width: 350px;
+            box-shadow:6px 6px 4px 4px rgba(0.2,0.2,0.2, 0.1);
+            border-radius: 4px;
+            margin:20px;
+        }
+        h3 {
+            /* border-bottom:1px solid #333; */
+            font-family: sans-serif;
+            padding:2px;
+            color:rgb(112, 126, 172);
+        }
+        .description-wrapper {
+            border-radius: 4px;
+            border:1px solid rgb(14, 59, 155);
+            padding:4px;
+            background:rgb(225, 232, 255);
+            }
+        /* The styles for the parallax */
+        /* .hero {
+        position: relative;
+        height: 550px;
+        padding: 20px;
+        margin: 0;
+        background: black;
+        background-image: url("images/pic.jpg");
+        background-attachment: fixed;
+        background-position: bottom center;
+        background-size: cover;
+        }
+
+        .hero h1 {
+        margin-top: 200px;
+        font-size: 0.1rem;
+        animation: title 1.2s forwards linear;
+        }
+
+        .hero p {
+        font-size: 2rem;
+        opacity: 0;
+        animation: subtitle 1.2s forwards linear;
+        animation-delay: 1.2s;
+        } */
+
+    </style>
+</html>
+
+

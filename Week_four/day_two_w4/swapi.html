@@ -279,6 +279,8 @@ let names = charecters.map((character) => {
 let massive = charecters.filter((character) => {
     if (character.mass > parseInt(50)) {return character}});
 let massive_names = massive.map((character) => character.name);
+
+let bigly = charecters.filter((char)=>{if (char.mass > parseInt(50)) {return char}}).map(char_filt=>char_filt.name);
 //         return character.map((character) => {character.name})
 //         };
 //   });

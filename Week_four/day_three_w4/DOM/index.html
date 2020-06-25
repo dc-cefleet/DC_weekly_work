@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Accessing the DOM
+        </title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Rogue One : A star wars story was amazing.</h1>
+        <div class="content" id="mainContent">
+            <section>
+                <h2>It was so special</h2>
+                <p>No other story brings such great emotion, and post-human Carrie Fisher had my wife in tears.</p>
+                <p class="extra">The story between Cassian and Jyn was tragically perfect.</p>
+            </section>
+            <section>
+                <h2>It fill much needed plot holes</h2>
+                <p>Really, Galen hiding that defect in the Death Star was a stroke of genius.</p>
+                <p class="extra">It added a lot to the power of Tarkin and how he was able to give a command to Vader too!</p>
+            </section>
+            <section>
+                <h2>Get More Info</h2>
+                <form>
+                    <div>
+                        <label for="first-name">First Name</label>
+                        <input id="first-name" name="first-name" />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" />
+                    </div>
+                </form>
+            </section>
+        </div>
+        <script>
+            // console.log(document.getElementsByTagName("p"))
+            // console.log(document.getElementsByClassName("extra"))
+            // console.log(document.getElementsByID("first-name"))
+            // console.log(document.querySelector(".extra"))
+            // console.log(document.querySelectorAll(".extra"))
+            // let aHTMLCollection = document.getElementsByClassName("extra")
+            // let aExtraItem = aHTMLCollection[1];
+
+            // let newH2 = document.querySelector("h2")
+            // let newSection = document.createElement("section")
+            // firsth2.append()
+            // console.log(newSection)
+
+
+            const createCard = (title,content,extra)=>{
+                let newSection = document.createElement("section")
+                let newH2 = document.createElement("h2")
+                newH2.innerText = title
+
+                let newP = document.createElement("p")
+                newP.append(content)
+
+                let newP2 = document.createElement("p")
+                newP2.append(extra)
+
+                newSection.append(newH2, newP, newP2)
+
+                newP2.setAttribute('class', 'extra')
+
+                let docBody = document.getElementById('mainContent')
+                docBody.append(newSection)
+            }
+            createCard("New Card", "Hey", "More stuff")
+            createCard("New Card", "Hey", "More stuff")
+            createCard("New Card", "Hey", "More stuff")
+        </script>
+    </body>
+</html>

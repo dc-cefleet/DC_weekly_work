@@ -25,25 +25,50 @@ print to the console "Child Function Called" The child function cannot be declar
 <title>Exercises</title>
 
 <script>
+    // normal function creation
     console.log("Exercise 1");
-    function V1 (name, age) {
+    function V1(name, age) {
         let myString = `Hello my name is ${name} and my age is ${age}`;
         console.log(myString);
     };
-    ((name, age) => {console.log(`Hello my name is ${name} and my age is ${age}`)});
+    // arrow function
+    V2((name, age) => {console.log(`Hello my name is ${name} and my age is ${age}`)});
+
+    // implicit return
+    V3((name, age) => console.log(`Hello my name is ${name} and my age is ${age}`));
+
+    let V4 = function(name, age) {console.log(`Hello my name is ${name} and my age is ${age}`)};
+    V4();
+
+
 
     console.log("Exercise 2");
-    function firstFunction() {
+    function firstFunction(name=False) {
+        console.log("Hello from the first function")
+        if (name == True) {
+            console.log("My name is David")
+        }
 
     };
     function E2 (firstFunction) {
-
+        console.log("Main function executing")
+        firstFunction(True)
     };
 
     console.log("Exercise 3");
-    function E3 () {
-
+    function E3 (callback, second_Param) {
+        console.log("Parent function called");
+        callback(second_Param)
+        // childFunction(() => console.log("Child function called"));
     };
+    E3(firstFunction)
+
+
+    let aFunc = function(){
+        console.log("Parent Function Called")
+        return ()=>console.log("Child Function Called")
+    aFunc()()
+    }
 </script>
 
 <body>
